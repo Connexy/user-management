@@ -6,6 +6,8 @@ import AddUser from "./pages/UserManagement/AddUser";
 import Faq from "./pages/Faq";
 import Contact from "./pages/Contact";
 import UserDetail from "./pages/UserManagement/UserDetail";
+import EditUser from "./pages/UserManagement/EditUser";
+import DeleteUser from "./pages/UserManagement/DeleteUser";
 
 
 function App() {
@@ -17,6 +19,8 @@ function App() {
             <Route path="/user-management" element={<UserManagement/>} />
             <Route path="/user-management/add" element={<AddUser/>} />
             <Route path="/user-management/detail/:userId" element={<UserDetail/>} />
+            <Route path="/user-management/edit/:userId" element={<EditUser/>} />
+            <Route path="/user-management/delete/:userId" element={<DeleteUser/>} />
             <Route path="/faq" element={<Faq/>} />
             <Route path="/contact" element={<Contact/>} />
           </Route>
