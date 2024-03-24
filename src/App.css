@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding:0;
+}
+.header {
+  background-color: grey;
+  padding: 20px;
+  color: #ffffff;
+}
+.row{
+  height: 80vh;
+}
+.sidebar {
+  float: left;
+  background-color: rgb(66, 66, 67);
+  width: 20%;
+  color: #ffffff;
+  padding: 2.5%;
+  height: 80vh;
+}
+
+.main-body {
+  float: right;
+  background-color: #fbfbfb;
+  width: 70%;
+  padding: 2.5%;
+  height: 80vh;
+}
+
+.footer {
+  background-color: grey;
+  padding: 20px;
+  color: #ffffff;
+  clear: both;
+}
+
+.sidebar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-nav li {
+  padding: 10px;
+  background-color: #4d4d4d;
+  margin-bottom: 5px;
+  color: #ffffff;
+}
+
+.sidebar-nav li a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+table {
+  margin-top: 20px;
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+/* tr:nth-child(even) {
+  background-color: #dddddd;
+} */
+
+.btn {
+  display: inline-block;
+  background: #84a4f1;
+  padding: 10px;
+  text-decoration: none;
+  color: #ffffff;
+  border-radius: 5px;
+  margin: 5px;
+  border: none;
+}
+
+.btn-danger {
+  background: red;
+}
+
+.btn-default {
+  background-color: #ccc;
+  color: #4d4d4d;
+}
+
+.pull-right {
+  float: right;
+}
+
+/* form css starts */
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+/* form css ends */
