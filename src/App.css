@@ -1,15 +1,18 @@
 * {
   margin: 0;
-  padding:0;
+  padding: 0;
 }
+
 .header {
   background-color: grey;
   padding: 20px;
   color: #ffffff;
 }
-.row{
+
+.row {
   height: 80vh;
 }
+
 .sidebar {
   float: left;
   background-color: rgb(66, 66, 67);
@@ -59,7 +62,8 @@ table {
   width: 100%;
 }
 
-td, th {
+td,
+th {
   border: 1px solid #dddddd;
   text-align: left;
   padding: 8px;
@@ -94,7 +98,8 @@ td, th {
 }
 
 /* form css starts */
-input[type=text], select {
+input[type=text],
+select {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -118,4 +123,7 @@ input[type=submit] {
 input[type=submit]:hover {
   background-color: #45a049;
 }
-/* form css ends */
+
+.label-danger {
+  color: rgb(229, 38, 38);
+}
