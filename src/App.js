@@ -8,6 +8,8 @@ import Contact from "./pages/Contact";
 import UserDetail from "./pages/UserManagement/UserDetail";
 import EditUser from "./pages/UserManagement/EditUser";
 import DeleteUser from "./pages/UserManagement/DeleteUser";
+import Login from "./pages/Auth/Login";
+import PrivateRoute from  "./routes/PrivateRoute";
 
 
 function App() {
@@ -16,14 +18,15 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />} >
-            <Route path="/user-management" element={<UserManagement/>} />
-            <Route path="/user-management/add" element={<AddUser/>} />
-            <Route path="/user-management/detail/:userId" element={<UserDetail/>} />
-            <Route path="/user-management/edit/:userId" element={<EditUser/>} />
-            <Route path="/user-management/delete/:userId" element={<DeleteUser/>} />
-            <Route path="/faq" element={<Faq/>} />
-            <Route path="/contact" element={<Contact/>} />
+            <Route path="/user-management" element={<PrivateRoute component = {UserManagement}/>} />
+            <Route path="/user-management/add" element={<PrivateRoute component = {AddUser}/>} />
+            <Route path="/user-management/detail/:userId" element={<PrivateRoute component = {UserDetail}/>} />
+            <Route path="/user-management/edit/:userId" element= {<PrivateRoute component={EditUser} />} />
+            <Route path="/user-management/delete/:userId" element={<PrivateRoute component = {DeleteUser}/>} />
+            <Route path="/faq" element={<PrivateRoute component = {Faq}/>} />
+            <Route path="/contact" element={<PrivateRoute component = {Contact}/>} />
           </Route>
+          <Route path ='/login' element={<Login/>} />
         </Routes>
       </BrowserRouter>
     </div>

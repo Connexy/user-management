@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ViTextInput from "../../components/ViTextInput";
+import ViPasswordInput from "../../components/ViPasswordInput";
 import { validateEmail } from "../../utils/common";
 
 const AddUser = () => {
@@ -8,6 +9,7 @@ const AddUser = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [user, setUser] = useState({
     username: "",
+    password: "",
     email: "",
     age: "",
     city: "",
@@ -20,6 +22,7 @@ const AddUser = () => {
 
   const [errorMsg, setErrMsg] = useState({
     username: "",
+    password: "",
     email: "",
     age: "",
     city: "",
@@ -33,6 +36,12 @@ const AddUser = () => {
       isValid = false
     } else {
       err.username = '';
+    }
+    if (user.password === '') {
+      err.password = 'Password is required';
+      isValid = false;
+    } else {
+      err.password = '';
     }
     if (user.email === '') {
       err.email = 'Email is required';
@@ -77,6 +86,14 @@ const AddUser = () => {
         handleInputChange={handleInputChange}
         isSubmitted={isSubmitted}
         errMessage='Username is required'
+      />
+      <ViPasswordInput
+        title='Password'
+        name='password'
+        value={user.password}
+        handleInputChange={handleInputChange}
+        isSubmitted={isSubmitted}
+        errMessage='Password is required'
       />
       <ViTextInput
         title='Email'

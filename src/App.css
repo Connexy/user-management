@@ -4,7 +4,7 @@
 }
 
 .header {
-  background-color: grey;
+  background-color: #656565;
   padding: 20px;
   color: #ffffff;
 }
@@ -19,7 +19,7 @@
   width: 20%;
   color: #ffffff;
   padding: 2.5%;
-  height: 80vh;
+  min-height: 80vh;
 }
 
 .main-body {
@@ -82,7 +82,14 @@ th {
   border-radius: 5px;
   margin: 5px;
   border: none;
+  cursor: pointer;
 }
+
+.vi-flex-container{
+  display: flex;
+  align-items: stretch;
+}
+
 
 .btn-danger {
   background: red;
@@ -98,7 +105,7 @@ th {
 }
 
 /* form css starts */
-input[type=text],
+input[type=text], [type=password],
 select {
   width: 100%;
   padding: 12px 20px;
@@ -126,4 +133,53 @@ input[type=submit]:hover {
 
 .label-danger {
   color: rgb(229, 38, 38);
+}
+/* css for login page */
+.container {
+  max-width: 400px;
+  margin: 100px auto;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+ 
+}
+h2 {
+  text-align: center;
+}
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+input[type="text"],
+input[type="password"],
+button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+button[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+.login-form {
+  width: 300px;
+  margin: 100px auto;
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+.alert-message{
+  padding: 20px;
+  margin: 10px 0;
+  background: rgb(229, 108, 108);
+  border: 1px solid rgb(255, 42, 42);
+  border-radius: 10px;
 }
