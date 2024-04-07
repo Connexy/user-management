@@ -1,7 +1,12 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ViTable from "../../components/ViTable";
+import  axios  from "axios";
+
+
 const UserManagement = () => {
+ 
+  
   const header = [
     {
       key: "username",
@@ -20,41 +25,47 @@ const UserManagement = () => {
       label: "City",
     }
   ]
-  const data = [
-    {
-      id: 1,
-      username: 'John',
-      email: 'jon@gmailcom',
-      age: 25,
-      city: 'London'
-    },
-    {
-      id: 2,
-      username: 'Jane',
-      email: 'jane@gmailcom',
-      age: 22,
-      city: 'New York'
-    },
-    {
-      id: 3,
-      username: 'Paul',
-      email: 'paul@gmailcom',
-      age: 30,
-      city: 'Paris'
-    }
-  ];
+  // const data = [
+  //   {
+  //     id: 1,
+  //     username: 'John',
+  //     email: 'jon@gmailcom',
+  //     age: 25,
+  //     city: 'London'
+  //   },
+  //   {
+  //     id: 2,
+  //     username: 'Jane',
+  //     email: 'jane@gmailcom',
+  //     age: 22,
+  //     city: 'New York'
+  //   },
+  //   {
+  //     id: 3,
+  //     username: 'Paul',
+  //     email: 'paul@gmailcom',
+  //     age: 30,
+  //     city: 'Paris'
+  //   }
+  // ];
   const [users, setUsers] = useState([]);
   useEffect(() => {
-    setTimeout(() => {
-      setUsers(data);
-    }, 500)
+    // API INTEGRATION
+    axios.get("http://localhost:4000/users").then((res) => {
+      setUsers(res.data);
+    }).catch((err) => {
+      alert("API Server Error");
+      console.log(err);
+
+    });
   }, []);
+  
 
   return (
     <div>
       <h1>User Management</h1>
       <Link to="/user-management/add" className="btn pull-right">Add User</Link>
-      <ViTable 
+      <ViTable
         data={users}
         header={header}
         actions={[
@@ -75,9 +86,9 @@ const UserManagement = () => {
           }
         ]}
       />
-    
+
       <h1>Banks</h1>
-      <ViTable 
+      <ViTable
         data={[
           {
             "name": "Everest",
