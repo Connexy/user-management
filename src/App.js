@@ -10,6 +10,8 @@ import EditUser from "./pages/UserManagement/EditUser";
 import DeleteUser from "./pages/UserManagement/DeleteUser";
 import Login from "./pages/Auth/Login";
 import PrivateRoute from  "./routes/PrivateRoute";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function App() {
@@ -29,6 +31,8 @@ function App() {
           <Route path ='/login' element={<Login/>} />
         </Routes>
       </BrowserRouter>
+     
+        <ToastContainer />
     </div>
   );
 };

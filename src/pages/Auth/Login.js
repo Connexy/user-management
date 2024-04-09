@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import ViPasswordInput from "../../components/ViPasswordInput";
 import ViTextInput from "../../components/ViTextInput";
 import ViMessage from "../../components/ViMessage";
+import { toast } from 'react-toastify';
+
 
 const Login = () => {
 
@@ -21,6 +23,16 @@ const Login = () => {
         }
     }
     const doLogin = (e) => {
+        toast.success('Login success', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+            });
         let isLogin = false;
         if (email === "admin" && password === "admin") {
             isLogin = true;

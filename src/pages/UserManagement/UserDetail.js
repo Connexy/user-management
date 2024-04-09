@@ -1,31 +1,32 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import axios from  'axios';
 
 const UserDetail = () => {
   const { userId } = useParams();
-  const data = [
-    {
-      id: 1,
-      username: 'John',
-      email: 'jon@gmailcom',
-      age: 25,
-      city: 'London'
-    },
-    {
-      id: 2,
-      username: 'Jane',
-      email: 'jane@gmailcom',
-      age: 22,
-      city: 'New York'
-    },
-    {
-      id: 3,
-      username: 'Paul',
-      email: 'paul@gmailcom',
-      age: 30,
-      city: 'Paris'
-    }
-  ];
+  // const data = [
+  //   {
+  //     id: 1,
+  //     username: 'John',
+  //     email: 'jon@gmailcom',
+  //     age: 25,
+  //     city: 'London'
+  //   },
+  //   {
+  //     id: 2,
+  //     username: 'Jane',
+  //     email: 'jane@gmailcom',
+  //     age: 22,
+  //     city: 'New York'
+  //   },
+  //   {
+  //     id: 3,
+  //     username: 'Paul',
+  //     email: 'paul@gmailcom',
+  //     age: 30,
+  //     city: 'Paris'
+  //   }
+  // ];
   const [user, setUser] = useState({
     username: "",
     email: "",
@@ -34,10 +35,18 @@ const UserDetail = () => {
   });
 
   useEffect(() => {
-    const newUser = data.find((obj) => obj.id.toString() === userId.toString())
-    if(newUser) {
-      setUser(newUser);
-    }
+    // const newUser = data.find((obj) => obj.id.toString() === userId.toString())
+    // if(newUser) {
+    //   setUser(newUser);
+    // }
+    axios.get(`http://localhost:4000/users/${userId}`).then((res) => {
+      setUser(res.data);
+    }).catch((err) => {
+      alert("API Server Error");
+      console.log(err);
+
+    });
+
   }, []);
 
   return (
