@@ -23,7 +23,7 @@ function App() {
             <Route path="/user-management" element={<PrivateRoute component = {UserManagement}/>} />
             <Route path="/user-management/add" element={<PrivateRoute component = {AddUser}/>} />
             <Route path="/user-management/detail/:userId" element={<PrivateRoute component = {UserDetail}/>} />
-            <Route path="/user-management/edit/:userId" element= {<PrivateRoute component={EditUser} />} />
+            <Route path="/user-management/edit/:userId" element= {<PrivateRoute component={AddUser}/>} />
             <Route path="/user-management/delete/:userId" element={<PrivateRoute component = {DeleteUser}/>} />
             <Route path="/faq" element={<PrivateRoute component = {Faq}/>} />
             <Route path="/contact" element={<PrivateRoute component = {Contact}/>} />
